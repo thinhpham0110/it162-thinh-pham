@@ -1,0 +1,88 @@
+@import "./breakPoint.scss";
+
+.logo {
+        color: #27ae60;
+
+        padding: 4px;
+        & > a {
+                color: #27ae60;
+        }
+}
+
+.navbar {
+        &__container {
+                display: flex;
+                position: relative;
+                background: #2c3e50;
+                align-items: center;
+        }
+
+        &__list {
+                display: flex;
+                @include BreakPoint(md) {
+                        & > li:not(:first-child) {
+                                display: none;
+                        }
+
+                        &.open {
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                flex-direction: column;
+                                background-color: #2c3e50;
+                                width: 100%;
+                                & > li {
+                                        display: block;
+                                }
+                        }
+                }
+        }
+
+        &__link {
+                color: #fefefe;
+                padding: 16px 8px;
+                display: block;
+
+                &:hover {
+                        transition: 0.3s;
+                        background-color: #27ae60;
+                }
+
+                &.selected {
+                        background-color: #27ae60;
+                }
+        }
+        &-btn-wrapper {
+                display: none;
+                right: 16px;
+                top: 6px;
+                position: absolute;
+                cursor: pointer;
+                height: 40px;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                row-gap: 8px;
+                column-gap: 8px;
+                @include BreakPoint(md) {
+                        display: grid;
+                }
+
+                & > div {
+                        height: 8px;
+                        transform: scale(1);
+                        width: 8px;
+                        transition: 0.2s;
+                        background-color: #fefefe;
+                }
+                &:hover > div {
+                        background-color: #f1c40f;
+                }
+
+                &.active {
+                        & > div:nth-child(1),
+                        & > div:nth-child(9) {
+                                transform: scale(0);
+                        }
+                }
+        }
+}

@@ -1,0 +1,15 @@
+version: "3"
+services:
+        server:
+                image: heaty566/be-heo
+                build: .
+                expose:
+                        - 4000
+        nginx:
+                image: nginx:1.15-alpine
+                ports:
+                        - 80:80
+                volumes:
+                        - ./data/certbot/conf:/etc/letsencrypt
+                        - ./data/certbot/www:/var/www/certbot
+                        - ./data/nginx:/etc/nginx/conf.d

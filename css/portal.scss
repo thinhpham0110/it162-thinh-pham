@@ -1,0 +1,48 @@
+@import "./breakPoint.scss";
+.container {
+        display: flex;
+        padding: 16px 0;
+
+        & aside {
+                flex: 1;
+                display: block;
+                padding: 0 16px;
+        }
+        & section {
+                flex: 2;
+                width: 100%;
+        }
+
+        @include BreakPoint(md) {
+                align-items: center;
+                flex-direction: column;
+                & section {
+                        margin-bottom: 16px;
+                }
+        }
+}
+
+.image {
+        object-fit: cover;
+        width: 100%;
+        &-desktop {
+                @include BreakPoint(xl) {
+                        display: none;
+                }
+        }
+        &-tablet {
+                display: none;
+                @include BreakPoint(xl) {
+                        display: block;
+                }
+                @include BreakPoint(md) {
+                        display: none;
+                }
+        }
+        &-mobile {
+                display: none;
+                @include BreakPoint(md) {
+                        display: block;
+                }
+        }
+}

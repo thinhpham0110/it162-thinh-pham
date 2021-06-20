@@ -1,0 +1,48 @@
+@import "./breakPoint";
+@import "./base";
+@import "./components/footer";
+@import "./components/navbar";
+@import "./components/utils";
+
+.form {
+        &__container {
+                display: flex;
+                justify-content: center;
+                padding: 2rem 0;
+                width: 100%;
+                @include BreakPoint(md) {
+                        padding: 1rem 0.25rem;
+                }
+        }
+        &__wrapper {
+        }
+        &__label {
+                display: block;
+        }
+
+        &__group {
+                width: 100%;
+                max-width: 350px;
+                margin-bottom: 0.5rem;
+                @include BreakPoint(md) {
+                        max-width: none;
+                }
+        }
+
+        &__input {
+                border: 1px solid #008000;
+                padding: 0.25rem 0.5rem;
+                border-radius: 2px;
+                display: block;
+                width: 100%;
+
+                &:focus {
+                        outline: none;
+                }
+        }
+        &__btn {
+                padding: 0.25rem 2rem;
+                color: white;
+                background-color: rgb(5, 150, 105);
+        }
+}

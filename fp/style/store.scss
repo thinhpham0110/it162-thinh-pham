@@ -1,0 +1,88 @@
+@import "./breakPoint";
+@import "./base";
+@import "./components/footer";
+@import "./components/navbar";
+@import "./components/utils";
+
+.store {
+        padding: 2rem 4rem;
+        background-color: rgb(55, 65, 81);
+        @include BreakPoint(md) {
+                padding: 2rem 0.5rem;
+        }
+
+        &__title {
+                font-size: 2.5rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-align: center;
+                font-family: "Times New Roman", Times, serif;
+                color: rgb(243, 244, 246);
+        }
+
+        &__box {
+                display: flex;
+                padding: 0 0.25rem;
+                background-color: white;
+                border-radius: 3px;
+        }
+        &__input {
+                padding: 0.25rem;
+                width: 100%;
+                &:focus {
+                        outline: none;
+                }
+        }
+
+        &__address {
+                display: flex;
+                @include BreakPoint(md) {
+                        flex-direction: column;
+                }
+        }
+
+        &__map {
+                flex: 1;
+                height: 36rem;
+                margin-right: 1rem;
+                @include BreakPoint(md) {
+                        height: 24rem;
+                        margin-right: 0rem;
+                }
+        }
+
+        &__btn {
+                background-color: white;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                border-radius: 3px;
+                &:focus {
+                        outline: none;
+                }
+                &.active {
+                        background-color: rgb(52, 211, 153);
+                }
+        }
+
+        &__group {
+                padding: 1rem 0;
+                display: grid;
+                gap: 0.5rem;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                @include BreakPoint(lg) {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+                @include BreakPoint(md) {
+                        grid-template-columns: 1fr 1fr;
+                }
+        }
+
+        &__information {
+                color: rgb(229, 231, 235);
+        }
+
+        &__sub {
+                font-weight: 600;
+                color: rgb(229, 231, 235);
+        }
+}
